@@ -1,2 +1,6 @@
 rootProject.name = 'apache.cxf.jaxrs.test'
+include 'TestBL'
+findProject(':TestBL')?.name = 'apache.cxf.jaxrs.test-bl'
+include 'TestST'
+findProject(':TestST')?.name = 'apache.cxf.jaxrs.test-st'
 
