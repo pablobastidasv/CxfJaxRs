@@ -9,7 +9,27 @@ repositories {
     mavenCentral()
 }
 
+war {
+    baseName = 'service'
+}
+
 dependencies {
+    def cdiVersion = '1.1'
+    def weldVersion = '2.1.2.Final'
+    def cxfVersion = '3.0.0'
+    def jacksonVersion = '2.2.3'
+
+    compile group: 'javax.enterprise', name:'cdi-api', version:"${cdiVersion}"
+
+    compile group: 'org.apache.cxf', name:'cxf-integration-cdi', version:"${cxfVersion}"
+    compile group: 'org.apache.cxf', name:'cxf-rt-frontend-jaxrs', version:"${cxfVersion}"
+
+    compile group: 'com.fasterxml.jackson.jaxrs', name:'jackson-jaxrs-json-provider', version:"${jacksonVersion}"
+    compile group: 'com.fasterxml.jackson.core', name:'jackson-core', version:"${jacksonVersion}"
+
+    compile group: 'org.jboss.weld.servlet', name:'weld-servlet', version:"${weldVersion}"
+    compile group: 'org.jboss.weld', name:'weld-core', version:"${weldVersion}"
+
     testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile group: 'org.assertj', name: 'assertj-core', version: '3.2.0'
 }
