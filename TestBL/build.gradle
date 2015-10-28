@@ -9,6 +9,13 @@ repositories {
     mavenCentral()
 }
 
+task deployOnDocker(type: Copy, dependsOn: ['war']){
+    from 'build/libs'
+    into 'docker/webapps'
+    include '*.war'
+    rename "service(\\W|\\w)+\\.war", "service.war"
+}
+
 war {
     baseName = 'service'
 }

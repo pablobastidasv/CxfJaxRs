@@ -94,9 +94,6 @@ nbdist/
 nbactions.xml
 nb-configuration.xml
 .nb-gradle/
-### Gradle template
-.gradle
-build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
