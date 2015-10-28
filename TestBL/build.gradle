@@ -9,11 +9,18 @@ repositories {
     mavenCentral()
 }
 
-task deployOnDocker(type: Copy, dependsOn: ['war']){
+task dockerInstall(type: Copy, dependsOn: ['war']){
     from 'build/libs'
     into 'docker/webapps'
     include '*.war'
     rename "service(\\W|\\w)+\\.war", "service.war"
+}
+
+task dockerClean(type: Delete, dependsOn: ['clean']) {
+    delete "docker/webapps/service", "docker/webapps/service.war"
+}
+
+task dockerCleanInstall(dependsOn: ['dockerClean', 'dockerInstall']){
 }
 
 war {
