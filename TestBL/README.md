@@ -6,7 +6,7 @@ this folder (docker)
 
 Once you have the image, you need to create the container, you can do it with the next command.
 
-    docker run --rm -ti -p 8080:8080 -v $PWD/webapps:/opt/tomcat/webapps --name egresos_bl tomcat8_java8
+    docker run --rm -ti -p 8080:8080 -p 1043:1043 -v $PWD/webapps:/opt/tomcat/webapps --name egresos_bl tomcat8_java8
 
 With this command, you going to have the Tomcat 8 started, the *webapp* folder into *docker* directory prepared 
 to make deploys on tomcat server and the log console will be showing to us.
