@@ -47,6 +47,6 @@ dependencies {
 
     compile group: 'org.projectlombok', name: 'lombok', version:"${lombokVersion}"
 
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.2.0'
+    compile group: 'org.mongodb.morphia', name: 'morphia', version:'1.0.1'
+
 }
