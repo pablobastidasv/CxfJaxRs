@@ -9,4 +9,17 @@ repositories {
 }
 
 dependencies {
+
+    testCompile group: "junit", name: "junit", version: "4.12"
+
+    testCompile group: "org.glassfish.jersey.core", name: "jersey-client", version: "2.22.1"
+    testCompile group: "org.glassfish", name: "javax.json", version: "1.0.4"
+    testCompile group: "org.glassfish.jersey.media", name: "jersey-media-json-processing", version: "2.22.1"
+
+    testCompile group: "com.airhacks.rulz", name: "jaxrsclient", version: "0.0.3"
+
+    testCompile group: "org.assertj", name: "assertj-core", version: "3.2.0"
+
+
+
 }
